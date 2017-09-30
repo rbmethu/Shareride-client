@@ -1,0 +1,31 @@
+
+<div class="page-menu row col-fit hidden-print">
+    <div class="col-sm-6 col-fit-left">
+        <h3>
+            {{title}}
+        </h3>
+    </div>
+    <div class="text-right col-sm-6 col-fit-right page-icons">
+        <a *ngIf="back" class="btn btn-default" (click)="goBack()"  title="Back">
+            <span class="fa fa-arrow-left"></span>
+        </a>
+        <a *ngIf="list" (click)="handle(list)"  class="btn btn-primary" title="{{list.title}}">
+            <span class="fa {{list.icon}}"></span>
+        </a>
+        <a *ngIf="view" (click)="handle(view)"  class="btn btn-primary" title="{{view.title}}">
+            <span class="fa {{view.icon}}"></span>
+        </a>
+        <a *ngIf="add" (click)="handle(add)"  class="btn btn-primary" title="{{add.title}}">
+            <span class="fa {{add.icon}}"></span>
+        </a>
+        <a *ngIf="edit" (click)="handle(edit)"  class="btn btn-default" title="{{edit.title}}">
+            <span class="fa {{edit.icon}}"></span>
+        </a>
+        <a *ngIf="refresh" (click)="handle(refresh)"  class="btn btn-default" title="{{refresh.title}}">
+            <span class="fa {{refresh.icon}}"></span>
+        </a>
+        <a *ngIf="remove" (click)="handle(remove)"  class="btn btn-danger" title="{{remove.title}}">
+            <span class="fa {{remove.icon}}"></span>
+        </a>
+    </div>
+</div>

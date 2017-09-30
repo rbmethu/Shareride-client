@@ -1,0 +1,30 @@
+
+<div class="col-full">
+    <tool-bar  [title]='title' [back]='back'></tool-bar>
+    <form class="col-md-8 col-fit" (ngSubmit)="f.form.valid && save()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="name" class="control-label">When will you be traveling?</label>
+            <input [(ngModel)]="item.departure" type="date" class="form-control" name="date" id="date" placeholder="YYYY/MM/DD" min="{{date | date:'yyyy/MM/dd'}}" required>
+        </div>
+        <div class="form-group">
+            <label for="origin" class="control-label">Where will you be traveling from?</label>
+            <input [(ngModel)]="item.origin" type="text" class="form-control" name="origin" id="origin" placeholder="Origin" required>
+        </div>
+        <div class="form-group">
+            <label for="destination" class="control-label">Where will you be traveling to?</label>
+            <input [(ngModel)]="item.destination" type="text" class="form-control" name="destination" id="destination" placeholder="Destination" required>
+        </div>
+        <div class="form-group">
+            <label for="capacity" class="control-label">How many additional passengers can you carry?</label>
+            <input [(ngModel)]="item.capacity" type="number" class="form-control" name="capacity" id="capacity" placeholder="Capacity" min="1" required>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <span class="fa fa-save"> Save</span>
+            </button>
+            <button class="btn btn-default" type="button">
+                <span class="fa fa-close"> Cancel</span>
+            </button>
+        </div>
+    </form>
+</div>

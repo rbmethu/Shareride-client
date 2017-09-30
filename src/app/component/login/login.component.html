@@ -1,0 +1,55 @@
+<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            <h3>Login</h3>
+        </div>
+        <form class="panel-body" (ngSubmit)="f.form.valid && toLogin()" #f="ngForm">  
+            <div class="form-group">
+                <input [(ngModel)]="user.email" type="text" class="form-control" id="username" name="username" placeholder="Username / Staff Number" required>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="user.password" type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="col-xs-12 col-fit">
+                <div class="form-group col-xs-6 col-fit">
+                    <input type="submit" class="btn btn-primary left" value="Login">
+                </div>
+                <div class="col-xs-6 col-fit">
+                    <div class="text-right right">
+                        <a href="#" data-toggle="modal" data-target="#reset-msg">
+                            Forgot Password
+                        </a>
+                    </div>
+                    <div class="modal fade" id="reset-msg" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        <span class="fa fa-close"></span>
+                                    </button>
+                                    <h4 class="modal-title">Password Reset</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <strong>Forgot your password or username?</strong>
+                                    <p>
+                                        Please contact your supervisor or the system administrator for 
+                                        assistance with password reset.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="panel-footer">
+            <div class="form-group text-center">
+                Dont have an account?
+                <a routerLink="register">Register</a>
+            </div>
+        </div>
+    </div>
+</div>

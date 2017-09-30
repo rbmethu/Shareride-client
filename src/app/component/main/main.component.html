@@ -1,0 +1,30 @@
+
+<div class="container-fluid content-main">
+    <div *ngIf="loggedin()" class="content clearfix">
+        <side-menu></side-menu>
+
+        <div class="col-sm-9">
+            <alert></alert>
+            <div [ngSwitch]="service.status">
+                <div *ngSwitchCase="404">
+                    <app-error-404></app-error-404>
+                </div>
+                <div *ngSwitchCase="403">
+                    <app-error-403></app-error-403>
+                </div>
+                <div *ngSwitchDefault>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div *ngIf="!loggedin()" class="content clearfix">
+        <alert></alert>
+        <div *ngIf="register()">
+            <app-register></app-register>
+        </div>
+        <div *ngIf="!register()">
+            <app-login></app-login>
+        </div>
+    </div>
+</div>

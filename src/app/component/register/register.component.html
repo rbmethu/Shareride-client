@@ -1,0 +1,30 @@
+
+<div class="col-full">
+    <tool-bar  [title]='title' [back]='back'></tool-bar>
+    <form class="col-md-8 col-fit" (ngSubmit)="f.form.valid && save()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="name" class="control-label">Full Name</label>
+            <input [(ngModel)]="item.name" type="text" class="form-control" name="name" id="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class="control-label">Email Address</label>
+            <input [(ngModel)]="item.email" type="email" class="form-control" name="email" id="email" placeholder="user@host.com" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="control-label">Password</label>
+            <input [(ngModel)]="item.password" type="password" class="form-control" name="password" id="password" placeholder="Password"  minlength="6" required>
+        </div>
+        <div class="form-group">
+            <label for="password-c" class="control-label">Confirm Password</label>
+            <input [(ngModel)]="item.password_confirmation" type="password" class="form-control" name="password_c" id="password_c" placeholder="Password Confirmation" minlength="6" required>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <span class="fa fa-save"> Register</span>
+            </button>
+            <button class="btn btn-default" type="button">
+                <span class="fa fa-close"> Cancel</span>
+            </button>
+        </div>
+    </form>
+</div>

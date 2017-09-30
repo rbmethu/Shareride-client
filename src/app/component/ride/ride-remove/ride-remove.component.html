@@ -1,0 +1,16 @@
+<div class="col-full">
+    <tool-bar  [title]='title' [back]='back'></tool-bar>
+    <div class="col-xs-12 col-fit">
+        <h4>
+            Do you want to delete ride, {{item.id}}?
+        </h4>
+    </div>
+    <div class="form-group">
+        <a class="btn btn-danger" (click)='remove()'>
+            <span class="fa fa-trash"> Delete</span>
+        </a>
+        <a class="btn btn-primary" (click)='goBack()'>
+            <span class="fa fa-close"> Cancel</span>
+        </a>
+    </div>
+</div>

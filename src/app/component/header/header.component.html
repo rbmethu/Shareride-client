@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="navbar-header">
+        <div class="navbar-brand green">RyDe</div>
+    </div>
+    <nav class="text-right">
+        <ul class="nav navbar-shortcut navbar-right">
+            <li class="dropdown">
+                <a class="img dropdown-toggle" data-toggle="dropdown" href="#">
+                    <span class="fa fa-user"></span>
+                    <span class="fa fa-caret-down"></span>
+                </a>
+                <ul *ngIf="loggedin()" class="dropdown-menu">
+                    <li>
+                        <a routerLink="profile">
+                            <span class="fa fa fa-user fa-fw"></span>
+                            User Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a >
+                            <span class="fa fa fa-gear fa-fw"></span>
+                            Preferences
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a (click)="logout()">
+                            <span class="fa fa fa-sign-out fa-fw"></span>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+                <ul *ngIf="!loggedin()" class="dropdown-menu">
+                    <li>
+                        <a routerLink="login">
+                            <span class="fa fa fa-sign-in fa-fw"></span>
+                            Sign In
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a routerLink="register">
+                            <span class="fa fa fa-user-plus fa-fw"></span>
+                            Sign Up
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

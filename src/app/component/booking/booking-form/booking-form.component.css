@@ -1,0 +1,22 @@
+td {
+    padding: 5px 10px;
+}
+td h3, td h4 {
+    margin: 0;
+}
+tr {
+    border-bottom: 5px solid;
+    border-color: white;
+}
+tr .box {
+    margin: 5px;
+    background: rgba(220, 220, 220, 0.9);
+}
+sub {
+    font-size: 10pt;
+}
+
+.selected .box {
+    background: rgba(100, 100, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+}

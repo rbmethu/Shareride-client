@@ -1,0 +1,31 @@
+
+<div class="col-full">
+    <tool-bar [title]= "title" [add]= "add" [refresh]= "refresh"></tool-bar>
+    <table id="ride-table" class="">
+        <tbody>
+            <tr *ngFor="let ride of list" (click)="itemLink(ride.id)">
+                <td class="box">
+                    <span class="fa fa-cab fa-3x text-muted"></span>
+                </td>
+                <td class="box">
+                    <div class="col-xs-12 col-fit">
+                        <h3 class="col-xs-6 col-fit-left">
+                            {{ride.user.name}}
+                        </h3>
+                        <h4 class="col-xs-6 text-right col-fit-right">
+                            {{ride.departure | date:'dd/MM/yyyy'}}
+                        </h4>
+                    </div>
+                    <h4 class="col-xs-12 col-fit text-muted">
+                        {{ride.origin}} to {{ride.destination}}
+                    </h4>
+                </td>
+                <td class="box">
+                    <div class="col-full green">
+                        <h3>{{ride.capacity - ride.booked}}<sub>/{{ride.capacity}} Pass</sub></h3>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
